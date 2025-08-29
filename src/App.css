@@ -1,0 +1,113 @@
+@font-face {
+  font-family: "Roboto";
+  src: url("./assets/fonts/Roboto/Roboto-VariableFont_wdth,wght.ttf") format("truetype");
+  font-weight: 100 900; /* диапазон всех весов */
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url("./assets/fonts/Roboto/Roboto-Italic-VariableFont_wdth,wght.ttf") format("truetype");
+  font-weight: 100 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+}
+
+:root {
+  --dark-theme--bg-color1: #2c2c38;
+  --dark-theme--bg-color2: #21212d;
+  --dark-theme--border: 1px solid #3f3f4b;
+  --dark-theme--button-color:#645fc6;
+  --dark-theme--button-color--hover:#645fc6;
+  --dark-theme--font-normal-color:#feffff;
+  --dark-theme--font-gray-color:#6e7785;
+  --dark-theme--font-purple-color:#6059a5;
+  --dark-theme--font-purple-color--hover:#645fc69f;
+
+  --light-theme--bg-color1: #fff;
+  --light-theme--bg-color2: #21212d;
+  --light-theme--border: 1px solid #3f3f4b;
+  --light-theme--font-normal-color:#333;
+  --light-theme--font-gray-color:#6e7785;
+  --light-theme--font-purple-color:#6059a5;
+  --light-theme--font-purple-color--hover:#645fc69f;
+
+  --border-gray: 1px solid #d3d3d3;
+}
+
+.app {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-wrap: nowrap;
+  color: #fff;
+  font-size: 16px;
+}
+
+.app.dark-theme {
+  color: var(--dark-theme--font-normal-color);
+
+}
+.app.light-theme {
+  color: var(--light-theme--font-normal-color);
+}
+
+.app.dark-theme .app-left-panel { 
+  background: var(--dark-theme--bg-color1);
+  border-right: var(--dark-theme--border);
+}
+
+.app.dark-theme .app-body{ 
+  background: var(--dark-theme--bg-color2);
+}
+
+.header {
+  width: 100%;
+  padding: 1em 2em;
+  box-sizing: border-box;
+  border-bottom: var(--border-gray)
+}
+
+.app-body {
+  width: calc(100% - 320px);
+  flex-grow: 1;
+  overflow-x: hidden;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+footer {
+  width: 100%;
+  padding: 1em 2em;
+  box-sizing: border-box;
+  border-top: var(--border-gray);
+}
+
+header {
+  width: 100%;
+  padding: 1em 2em;
+  box-sizing: border-box;
+  border-bottom: var(--border-gray);
+}
+
+.app-main-panel {
+  width: calc(100% - 320px);
+  height: 100%;
+}
+
+._logo {
+  display: flex;
+  justify-content: flex-start;
+  padding: 1em; 
+  box-sizing: border-box;
+}
+._logo > img{
+  max-width: 100%;
+}

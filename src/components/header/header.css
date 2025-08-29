@@ -1,0 +1,15 @@
+.app .app-header {
+  transition: border .4s, background .4s;
+}
+
+.app.dark-theme .app-header { 
+  background: var(--dark-theme--bg-color1);
+  border-bottom: var(--dark-theme--border);
+
+}
+
+.app.light-theme .app-header { 
+  background: var(--light-theme--bg-color1);
+  border-bottom: var(--border-gray);
+
+}
