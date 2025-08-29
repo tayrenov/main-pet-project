@@ -1,5 +1,5 @@
 .app .app-header {
-  transition: border .4s, background .4s;
+  transition: border var(--animation-timer), background var(--animation-timer);
 }
 
 .app.dark-theme .app-header { 

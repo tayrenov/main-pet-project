@@ -39,6 +39,7 @@ body {
   --light-theme--font-purple-color--hover:#645fc69f;
 
   --border-gray: 1px solid #d3d3d3;
+  --animation-timer: .4s;
 }
 
 .app {
@@ -56,15 +57,6 @@ body {
 }
 .app.light-theme {
   color: var(--light-theme--font-normal-color);
-}
-
-.app.dark-theme .app-left-panel { 
-  background: var(--dark-theme--bg-color1);
-  border-right: var(--dark-theme--border);
-}
-
-.app.dark-theme .app-body{ 
-  background: var(--dark-theme--bg-color2);
 }
 
 .header {
@@ -97,10 +89,7 @@ header {
   border-bottom: var(--border-gray);
 }
 
-.app-main-panel {
-  width: calc(100% - 320px);
-  height: 100%;
-}
+
 
 ._logo {
   display: flex;
