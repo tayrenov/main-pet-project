@@ -1,28 +1,50 @@
 .theme-switcher {
     cursor: pointer;
-    padding: 8px;
+    padding: 18px 22px;
 }
 
 .switch {
     position: relative;
     width: 100%;
-    height: 24px;
+    height: 18px;
     background: linear-gradient(145deg, #667eea, #764ba2);
     border-radius: 25px;
     transition: all 0.3s ease;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    width: 40%;
+    margin: 0 auto;
 }
 
 .switch.dark {
     background: linear-gradient(145deg, #2c3e50, #34495e);
 }
 
+.switch > .SunSVG,
+.switch > .MoonSVG {
+    position: absolute;
+    top: -8px;
+    width: 26px;
+}
+
+.switch > .SunSVG > svg,
+.switch > .MoonSVG > svg {
+    width: 100%;
+}
+
+.switch > .SunSVG{
+    left: -42px;
+    z-index: 10;
+}
+.switch > .MoonSVG{
+    right: -42px;
+    z-index: 10;
+}
 .slider {
     position: absolute;
-    top: -3px;
-    left: -6px;
-    width: 32px;
-    height: 32px;
+    top: 3px;
+    left: 6px;
+    width: 12px;
+    height: 12px;
     background: white;
     border-radius: 50%;
     transition: all 0.3s ease;
@@ -33,7 +55,7 @@
 }
 
 .switch.dark .slider {
-    left: calc(100% - 32px);
+    left: calc(100% - 16px);
     background: #ecf0f1;
 }
 
@@ -75,4 +97,13 @@
 
 .switch.dark:hover .slider {
     transform: scale(1.1) translateX(-2px);
+}
+
+.app.light-theme .theme-switcher {
+    background: #fff;
+}
+
+.app.dark-theme .theme-switcher {
+    background: #1f1f2b7d;
+    border-radius: 4px;
 }

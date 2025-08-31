@@ -4,7 +4,7 @@
 
 .app.dark-theme .app-header { 
   background: var(--dark-theme--bg-color1);
-  border-bottom: var(--dark-theme--border);
+  border-bottom: var(--border-gray);
 
 }
 
@@ -12,4 +12,11 @@
   background: var(--light-theme--bg-color1);
   border-bottom: var(--border-gray);
 
+}
+
+.app-header {
+    min-height: 92px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }

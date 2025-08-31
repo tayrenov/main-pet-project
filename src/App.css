@@ -21,10 +21,11 @@ body {
 
 :root {
   --dark-theme--bg-color1: #2c2c38;
-  --dark-theme--bg-color2: #21212d;
+  --dark-theme--bg-color2: #3b3b4f7d;
   --dark-theme--border: 1px solid #3f3f4b;
   --dark-theme--button-color:#645fc6;
-  --dark-theme--button-color--hover:#645fc6;
+  --dark-theme--button-color--hover:#645fc63f;
+  --dark-theme--button-font-color--hover:#ffffff;
   --dark-theme--font-normal-color:#feffff;
   --dark-theme--font-gray-color:#6e7785;
   --dark-theme--font-purple-color:#6059a5;
@@ -33,6 +34,8 @@ body {
   --light-theme--bg-color1: #fff;
   --light-theme--bg-color2: #21212d;
   --light-theme--border: 1px solid #3f3f4b;
+  --dark-theme--button-font-color:#ffffff;
+  --dark-theme--button-font-color--hover:#ffffff;
   --light-theme--font-normal-color:#333;
   --light-theme--font-gray-color:#6e7785;
   --light-theme--font-purple-color:#6059a5;
@@ -45,6 +48,7 @@ body {
 .app {
   width: 100vw;
   height: 100vh;
+  min-height: 720px;
   display: flex;
   flex-wrap: nowrap;
   color: #fff;
@@ -94,7 +98,7 @@ header {
 ._logo {
   display: flex;
   justify-content: flex-start;
-  padding: 1em; 
+  padding: 6px 1em; 
   box-sizing: border-box;
 }
 ._logo > img{

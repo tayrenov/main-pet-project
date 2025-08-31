@@ -3,17 +3,17 @@ import { useSelector } from "react-redux";
 function IndexPage() {
 
     const auth = useSelector((state)=> state.app.auth)
-    
+
     return (
 
         <div>
-            {auth ? <WellcomePage_User /> : <WellcomePage_Guest />}
+            {auth ? <WellcomePageUser /> : <WellcomePageGuest />}
         </div>
 
     )
 }
 
-function WellcomePage_Guest() {
+function WellcomePageGuest() {
     return (
         <div>
             <div>Wellcome</div>
@@ -24,7 +24,7 @@ function WellcomePage_Guest() {
     )
 }
 
-function WellcomePage_User() {
+function WellcomePageUser() {
     return (
         <div>
             <div>Wellcome</div>

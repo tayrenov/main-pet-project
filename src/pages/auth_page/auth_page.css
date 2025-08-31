@@ -1,0 +1,70 @@
+.app.dark-theme .auth-page__form{
+    background: var(--dark-theme--bg-color2);
+} 
+/************/
+.auth-page {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.auth-page__form {
+    width: 420px;
+    height: 420px;
+    box-shadow: 0 0 12px rgba(0,0,0, .2);
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    padding: 4em 4em 2em 4em;
+
+}
+
+.auth-page__form  h1{
+    margin: 0em 0em .4em 0em;
+    text-align: center;
+}
+
+.auth-page__form__input {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10x;
+}
+
+
+.auth-page__form__input > p{
+    margin-bottom: 8px;
+}
+
+.auth-page__form__input > input {
+    padding: .6em .8em;
+    box-sizing: border-box;
+}
+
+.auth-page__form__show-pw {
+    display: flex;
+    align-items: center;
+}
+
+.auth-page__form__show-pw > p{
+    margin: 10px 0;
+}
+.auth-page__form__show-pw > input{
+    margin: 0 8px 0 0;
+}
+
+.auh-page__form__btn-panel {
+    margin-top: auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.auh-page__form__btn-panel > a,
+.auh-page__form__btn-panel > button {
+    border: 1px solid #000;
+    padding: .8em 1.8em;
+    text-align: center;
+    font-size: 16px;
+    text-decoration: none;
+}

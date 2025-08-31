@@ -1,5 +1,5 @@
 import { useSelector } from 'react-redux';
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import './App.css';
 
@@ -22,7 +22,7 @@ function App() {
 
           <Routes>
             <Route path='/' element={<Header title='Index-page'/>}/>
-            <Route path='/todos' element={<Header title='Todos-page'/>}/>
+            <Route path='/todos' element={<Header title='Todo app'/>}/>
             <Route path='/todo/:id' element={<Header title='Todos-page-id'/>} />
           </Routes>
 

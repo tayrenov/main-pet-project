@@ -16,13 +16,21 @@ function ThemeSwitcher() {
     return (
         <div className="theme-switcher" onClick={handleSwitchTheme}>
             <div className={`switch ${mainTheme === 'dark' ? 'dark' : 'light'}`}>
+                <div className='SunSVG'>
+                    <SunSVG/>
+                </div>
                 <div className="slider">
+                    
                     <div className="icon sun-icon">
-                        <SunSVG />
+                        
                     </div>
                     <div className="icon moon-icon">
-                        <MoonSVG />
+                        
                     </div>
+                    
+                </div>
+                <div className='MoonSVG'>
+                    <MoonSVG />
                 </div>
             </div>
         </div>
@@ -46,7 +54,7 @@ const SunSVG = () => (
 
 // SVG иконка Луны
 const MoonSVG = () => (
-    <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg  width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M27.5 18.5C27.5 23.7467 23.2467 28 18 28C12.7533 28 8.5 23.7467 8.5 18.5C8.5 13.2533 12.7533 9 18 9C18.3314 9 18.6596 9.0119 18.9842 9.03538C17.8929 10.0711 17.25 11.5833 17.25 13.25C17.25 16.5637 19.9363 19.25 23.25 19.25C24.9167 19.25 26.4289 18.6071 27.4646 17.5158C27.4881 17.8404 27.5 18.1686 27.5 18.5Z" 
               fill="currentColor" 
               stroke="currentColor" 
