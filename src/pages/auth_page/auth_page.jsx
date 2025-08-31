@@ -30,6 +30,10 @@ function AuthPage() {
                     />
                     <p>Show password</p>
                 </label>
+                <div className='auh-page__form__error-container'>
+                    <p>Some error blablabla blablabla blabla blablabla bla blabla</p>
+                </div>
+
                 <div className='auh-page__form__btn-panel'>
                     <NavLink className="_cancel" to='/'>Cancel</NavLink>
                     <button>Login</button>

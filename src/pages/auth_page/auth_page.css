@@ -17,7 +17,7 @@
 
 .auth-page__form {
     width: 420px;
-    height: 442px;
+    min-height: 442px;
     display: flex;
     flex-direction: column;
     box-sizing: border-box;
@@ -111,4 +111,10 @@
 
 .auh-page__form__btn-panel > a._cancel:hover {
     background: #f84040b2;
+}
+
+.auh-page__form__error-container {
+    color:#f24f4f7d;
+    text-align: center;
+    margin-bottom: 12px;
 }
