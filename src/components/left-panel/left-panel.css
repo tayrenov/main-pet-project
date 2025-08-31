@@ -73,7 +73,7 @@
     color: var(--dark-theme--font-normal-color);
 }
 .app.dark-theme .user-nav__item:hover {
-    color: var(--dark-theme--button-font-color--hover);
+    color: var(--dark-theme--button-color);
     /* background: var(--dark-theme--button-color--hover); */
 }
 

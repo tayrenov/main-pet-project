@@ -1,8 +1,16 @@
 import { NavLink } from 'react-router-dom';
+import { useState } from 'react';
 
 import './auth_page.css'
 
 function AuthPage() {
+    
+    const [showPassword, setShowPassword] = useState(false);
+
+    const handleCheckboxChange = () => {
+        setShowPassword(!showPassword);
+    };
+
     return (
         <div className='auth-page'>
             <form className='auth-page__form'>
@@ -13,14 +21,17 @@ function AuthPage() {
                 </label>
                 <label className='auth-page__form__input'>
                     <p>Password</p>
-                    <input type='password'></input>
+                    <input type={showPassword ? 'text' : 'password'}></input>
                 </label>
-                <label className='auth-page__form__show-pw'>
-                    <input type='checkbox'></input>
+                <label className={`auth-page__form__show-pw ${showPassword ? '_auth-checkbox__active' : ''}`}>
+                    <input type='checkbox' 
+                           checked={showPassword}
+                           onChange={handleCheckboxChange} 
+                    />
                     <p>Show password</p>
                 </label>
                 <div className='auh-page__form__btn-panel'>
-                    <NavLink to='/'>Cancel</NavLink>
+                    <NavLink className="_cancel" to='/'>Cancel</NavLink>
                     <button>Login</button>
                 </div>
                 

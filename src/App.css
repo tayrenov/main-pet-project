@@ -41,6 +41,8 @@ body {
   --light-theme--font-purple-color:#6059a5;
   --light-theme--font-purple-color--hover:#645fc69f;
 
+
+  --cancel-color:#f24f4f7d;
   --border-gray: 1px solid #d3d3d3;
   --animation-timer: .4s;
 }

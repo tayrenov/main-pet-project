@@ -1,5 +1,10 @@
 .app.dark-theme .auth-page__form{
     background: var(--dark-theme--bg-color2);
+    border: 1px solid var(--dark-theme--bg-color2);
+} 
+
+.app.light-theme .auth-page__form{
+    border: var(--border-gray);
 } 
 /************/
 .auth-page {
@@ -12,13 +17,12 @@
 
 .auth-page__form {
     width: 420px;
-    height: 420px;
-    box-shadow: 0 0 12px rgba(0,0,0, .2);
+    height: 442px;
     display: flex;
     flex-direction: column;
     box-sizing: border-box;
-    padding: 4em 4em 2em 4em;
-
+    padding: 4em 4em 3em 4em;
+    border-radius: 4px;
 }
 
 .auth-page__form  h1{
@@ -30,6 +34,7 @@
     display: flex;
     flex-direction: column;
     margin-top: 10x;
+
 }
 
 
@@ -40,7 +45,16 @@
 .auth-page__form__input > input {
     padding: .6em .8em;
     box-sizing: border-box;
+    outline: none;
+    border: 1px solid #d3d3d3;
+    transition: color var(--animation-timer), border var(--animation-timer);
 }
+
+.auth-page__form__input > input:focus {
+    color: var(--dark-theme--button-color);
+    border: 1px solid var(--dark-theme--button-color);
+}
+
 
 .auth-page__form__show-pw {
     display: flex;
@@ -48,6 +62,11 @@
 }
 
 .auth-page__form__show-pw > p{
+    margin: 10px 0;
+    transition: color var(--animation-timer);
+}
+.auth-page__form__show-pw._auth-checkbox__active > p{
+    color: var(--dark-theme--button-color);
     margin: 10px 0;
 }
 .auth-page__form__show-pw > input{
@@ -62,9 +81,34 @@
 
 .auh-page__form__btn-panel > a,
 .auh-page__form__btn-panel > button {
-    border: 1px solid #000;
-    padding: .8em 1.8em;
+    border: none;
     text-align: center;
     font-size: 16px;
     text-decoration: none;
+    box-sizing: border-box;
+    background: var(--dark-theme--button-color);
+    color: #fff;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background var(--animation-timer);
+}
+
+.auh-page__form__btn-panel > button:hover {
+    background: #4941e3;
+}
+
+.auh-page__form__btn-panel > a {
+    padding: .8em 1.8em;
+}
+
+.auh-page__form__btn-panel > button {
+    padding: .8em 3.8em;
+}
+
+.auh-page__form__btn-panel > a._cancel {
+    background: #f24f4f7d;
+}
+
+.auh-page__form__btn-panel > a._cancel:hover {
+    background: #f84040b2;
 }
