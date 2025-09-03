@@ -17,7 +17,6 @@ function LeftPanel() {
     return (
         <div className="app-left-panel">
             <NavLink to="/" className="_logo">
-                {/* <img src={Logo} alt="logo" /> */}
                 <Logo theme={themeStyle}/>
             </NavLink>
 

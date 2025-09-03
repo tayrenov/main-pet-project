@@ -102,7 +102,8 @@
 }
 
 .auh-page__form__btn-panel > button {
-    padding: .8em 3.8em;
+    width: 160px;
+    text-align: center;
 }
 
 .auh-page__form__btn-panel > a._cancel {

@@ -38,6 +38,12 @@ function MainNav() {
             >
                 Auth
             </NavLink>
+            <NavLink
+                to="/check-token"
+                className={({ isActive }) => isActive ? "user-nav__item _item-active" : "user-nav__item"}
+            >
+                Checed Token
+            </NavLink>
         </div>
     )
 }
