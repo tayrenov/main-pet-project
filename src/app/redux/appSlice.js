@@ -8,8 +8,7 @@ const appSlice = createSlice({
             user:null,
             error:null, 
             loading: false,
-            role:null,
-            token: null           
+            role:null,     
         }
 
     },
@@ -34,10 +33,18 @@ const appSlice = createSlice({
         },
         clearAuthError(state) {
             state.auth.error = null;
+        },
+        logout(state) {
+            state.auth.isAuth = false;
+            state.auth.user = null;
+            state.auth.role = null;
+            state.auth.token = null;
+            state.auth.error = null;
+            state.auth.loading = false;
         }
     }
 });
 
 
-export const { authStart, loginSuccess, loginFail, clearAuthError } = appSlice.actions;
+export const { authStart, loginSuccess, loginFail, clearAuthError, logout } = appSlice.actions;
 export default appSlice.reducer;

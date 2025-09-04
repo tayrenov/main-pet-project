@@ -1,9 +1,6 @@
-import { setTodos, setLoading, setError, setDbStatus } from "./todosSlice.js";
-
-const SERVICE = "todo-list-api__v2";
+import { setTodos, setLoading, setError } from "./todosSlice.js";
 
 const API_TODOS_URL = "http://localhost:5000/api/todos";
-const API_HEALTH_URL = "/health"
 
 export const fetchTodos = () => async (dispatch, getState) => {
 

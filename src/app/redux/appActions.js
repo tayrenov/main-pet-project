@@ -1,4 +1,4 @@
-import { authStart, loginSuccess, loginFail} from "./appSlice.js";
+import { authStart, loginSuccess, loginFail, logout} from "./appSlice.js";
 
 export const loginUser = (login, password) => {
     console.log({login}, {password})
@@ -19,14 +19,16 @@ export const loginUser = (login, password) => {
             console.log("🔑 Token from server:", data.token)
 
             if (data.success) {
+                localStorage.setItem("token", data.token); // ✅ сохраняем токен
                 dispatch(loginSuccess({ 
-                    login:data.login, 
+                    login: data.login, 
                     role: data.role,
                     token: data.token
                 }));
             } else {
                 dispatch(loginFail(data.message));
             }
+
         } catch (error) {
             dispatch(loginFail("Server error"))
         }
@@ -34,12 +36,12 @@ export const loginUser = (login, password) => {
 }
 
 export const checkToken = () => {
-    return async (dispatch, getState) => {
-        const token = getState().app.auth.token;
+    return async (dispatch) => {
+        const token = localStorage.getItem("token"); // ✅ только из localStorage
 
         if (!token) {
-            dispatch(loginFail('Token is empty'))
-            return
+            dispatch(loginFail("Token is empty"));
+            return;
         }
 
         try {
@@ -51,22 +53,63 @@ export const checkToken = () => {
             });
 
             const data = await response.json();
-            console.log("Checked token: ",data);
+            console.log("Checked token: ", data);
 
             if (data.success) {
                 dispatch(loginSuccess({
                     login: data.user.login,
-                    role: data.user.role,
-                    token
-                }))
+                    role: data.user.role
+                }));
             } else {
                 dispatch(loginFail(data.message));
+                localStorage.removeItem("token");
             }
-
         } catch (error) {
-            dispatch(loginFail("Error checked token"))
+            dispatch(loginFail("Error checking token"));
+            localStorage.removeItem("token");
         }
-    }
+    };
+};
+
+export const initAuth = () => {
+    return async (dispatch) => {
+        const token = localStorage.getItem("token");
+
+        if (!token) {
+            dispatch(loginFail("Token is empty"));
+            return;
+        }
+
+        try {
+            const response = await fetch("http://localhost:5000/api/check-token", {
+                method: "GET",
+                headers: {
+                    "Authorization": `Bearer ${token}`
+                }
+            });
+
+            const data = await response.json();
+            console.log("InitAuth checked token:", data);
+
+            if (data.success) {
+                dispatch(loginSuccess({
+                    login: data.user.login,
+                    role: data.user.role
+                }));
+            } else {
+                dispatch(loginFail(data.message));
+                localStorage.removeItem("token");
+            }
+        } catch (error) {
+            dispatch(loginFail("Error checking token"));
+            localStorage.removeItem("token");
+        }
+    };
+};
+
+export const logoutUser = () => (dispatch) => {
+    localStorage.removeItem("token");
+    dispatch(logout());
 }
 
 export const clearAuthError = () => ({

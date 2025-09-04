@@ -11,7 +11,6 @@ import { fetchTodos } from '../../app/redux/todosActions.js';
 // import { testAuthTrue } from '../../app/redux/appActions.js';
 import AuthPage from '../../pages/auth_page/auth_page.jsx';
 import CheckToken from '../../pages/check-token/check-token.jsx';
-import NeedAuth_page from '../../pages/needAuth_page/needAuth_page.jsx';
 import ProtectedRoute from '../ProtectedRoute.js';
 
 function MainPanel() {
@@ -26,12 +25,11 @@ function MainPanel() {
         <div className="app-main-panel">
 
             <Routes>
-                <Route path='/' element={<IndexPage/>}/>
-                <Route path='/todos' element={<TodosListPage />}/>
-                <Route path='/todo/:id' element={<TodoItemPage />} />
+                <Route path='/' element={<IndexPage/> }/>
+                <Route path='/todos' element={<ProtectedRoute > <TodosListPage /> </ProtectedRoute>}/>
+                <Route path='/todo/:id' element={<ProtectedRoute > <TodoItemPage /> </ProtectedRoute>} />
                 <Route path='/auth' element={<AuthPage/>} />
                 <Route path='/check-token' element={<ProtectedRoute > <CheckToken /> </ProtectedRoute>} />       
-                <Route path='/need-auth' element={<NeedAuth_page/>} />
             </Routes>
 
             {/* <button onClick={hundleAuth}>Set Auth: {auth ? '1' : '0'}</button>
